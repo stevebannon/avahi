@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  avahi:
+    build: .
+    image: local/avahi:1.0.0
+    restart: always
+    deploy:
+      labels:
+        - traefik.enable=false
+    networks:
+      - default
+
